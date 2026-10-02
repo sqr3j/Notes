@@ -4,4 +4,119 @@ without quotes no space
 :set prompt >
 
 
+Fri Oct  2 14:25:48 CEST 2026
+Fri Oct  2 14:26:36 CEST 2026
+
+The next command to try is who, which tells you everyone who is currently logged in
+
+_mbsetupuser     console      Sep 11 12:24 
+home             console      Sep 11 12:29 
+home             ttys000      Sep 22 16:30 
+home             ttys001      Sep 22 16:32 
+
+The first column is the user name.
+cat /etc/passwd | grep _mbs
+
+_mbsetupuser:*:248:248:Setup User:/var/setup:/bin/bash
+
+The second is the system's name for the connection being used
+tty stands for "teletype", an archaic synonym for "terminal"
+The rest tells when the user logged on. You might also try
+% who am i
+
+% stty
+speed 9600 baud;
+lflags: echoe echoke echoctl pendin
+iflags: iutf8
+oflags: -oxtabs
+cflags: cs8 -parenb
+
+% tabs -h
+Another common choice is ctrl-u for line kill.
+
+Creating files -- the editor
+
+% ed
+a
+dsjlfjsdl
+.
+w junk
+10
+q
+
+The command "a" "append" tells ed to start collecting text. The "." that signals the end of the text must be typed at the beginning of a line by itself.
+
+ls -l
+-rw-r--r--  1 home  staff    10 Oct  2 14:55 junk
+
+If you want to type 
+% od -c junk | pbcopy
+
+0000000    d   s   j   l   f   j   s   d   l  \n                        
+0000012
+
+ed junk
+10
+a
+ABC
+.
+w junk2
+14
+q
+
+When you are done, the q command "quit" leaves the editor
+when it doesn't understand command prints ?
+ed junk
+A
+?
+p -- prints the current/last line
+1 -- prints the first line
+22
+?
+
+ls -t causes the files to be listed in "time" order:
+the order in which they were last changed, most recent first.
+
+% ls -lt
+total 80
+-rw-r--r--  1 home  staff     3 Oct  2 15:09 temp
+-rw-r--r--  1 home  staff    16 Oct  2 15:04 junk2
+-rw-r--r--  1 home  staff    10 Oct  2 14:55 junk
+
+"total 80" tells how many blocks of disc space the files occupy; a block is usually either 512 or 1024 characters.
+
+>>>
+-rw-r--r--@ 1 home  staff  772 Sep 22 15:14 notes.txt
+-rw-r--r--@ 1 home  staff   68 Sep 21 15:11 one.st
+file has Extended Attributes/ xattr
+see what it is
+% ls -l@
+or
+% xattr one.st
+com.apple.provenance
+
+xattr -c [-r] [-s] file [file ...]]]]
+The fourth form (-d) deletes the xattr attr_name.
+The fifth form (-c) deletes (clears) all xattrs.
+
+% xattr -c *.st
+xattr -d com.apple.provenance one.st
+<<<
+
+-rw-r--r--  1 home  staff     3 Oct  2 15:09 temp
+The 1 that follows is the number of links to the file; ignore it until Chapter 2
+"you" is the owner of the file, that is, the person who created it.
+19 and 22 (3 in my case) are the number of characters in the corresponding files.
+The date and time tell when the file was last changed.
+
+
+
+
+
+
+
+
+
+
+
 
