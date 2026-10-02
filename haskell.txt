@@ -1,0 +1,7 @@
+:set prompt abc
+:set prompt "> "
+without quotes no space
+:set prompt >
+
+
+
