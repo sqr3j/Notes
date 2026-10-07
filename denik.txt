@@ -1,0 +1,20 @@
+
+2026-10-06 13:52
+
+sudo rm /Library/Preferences/com.apple.keyboardtype.plist
+
+how to execute a program elevated
+
+>
+I am using text editor bbEdit on the mac, editing a haskell file, how do I set the editor to auto replace tabs with spaces?
+
+Gemini:
+click the Gear Icon, click auto-expand tabs
+
+2026-10-07 14:48
+man 7 ls
+No manual entry for ls
+
+echo $?
+1
+Normal is zero, 1 indicates an error
