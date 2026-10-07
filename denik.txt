@@ -18,3 +18,7 @@ No manual entry for ls
 echo $?
 1
 Normal is zero, 1 indicates an error
+
+Chapter 1 UNIX FOR BEGINNERS
+RETURN is an example of a control character - an invisible character that controls some aspect of input and output on the terminal. On any reasonable terminal, RETURN has a key of its own, but most control characters do not.
+Instead they must be typed by holding down the control key, then pressing another key, usually a letter. For example, RETURN may be typed by pressing the RETURN key or, equivalently, holding down the CONTROL key and typing 'm'. RETURN might therefore be called a control-m
