@@ -22,3 +22,28 @@ Normal is zero, 1 indicates an error
 Chapter 1 UNIX FOR BEGINNERS
 RETURN is an example of a control character - an invisible character that controls some aspect of input and output on the terminal. On any reasonable terminal, RETURN has a key of its own, but most control characters do not.
 Instead they must be typed by holding down the control key, then pressing another key, usually a letter. For example, RETURN may be typed by pressing the RETURN key or, equivalently, holding down the CONTROL key and typing 'm'. RETURN might therefore be called a control-m
+
+control-m = ENTER
+control-d = no more input; tells a program that there is no more input
+control-g = rings the bell
+control-h = backspace
+control-i = tab
+
+man ascii
+M and m are in the same row, as is cr 015
+G and g as is 007 bell
+H and h as is 010 bs - backspace
+
+Renaming a file is done by "moving" it from one name to another
+mv junk precious
+This means that the file used to be called junk is now called precious;
+
+To make a copy of a file (that is, to have two versions of something), use the cp command
+
+% cp precious precious.save
+
+makes a duplicate copy of precious in precious.save
+-- creates a new i-node
+-- moving mv doesn't seem to change the i-node; ls -li ..
+
+
